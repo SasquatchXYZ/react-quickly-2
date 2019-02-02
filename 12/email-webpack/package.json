@@ -1,0 +1,39 @@
+{
+  "name": "12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack -w",
+    "wds-cli": "./node_modules/.bin/webpack-dev-server --inline --hot --module-bind 'css=style-loader!css-loader'  --module-bind 'jsx=react-hot-loader!babel-loader' --config webpack.dev-cli.config.js",
+    "wds": "./node_modules/.bin/webpack-dev-server --config webpack.dev.config.js"
+  },
+  "keywords": [
+    "react.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "6.13.2",
+    "babel-loader": "6.4.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-react": "6.5.0",
+    "css-loader": "0.23.1",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "react-hot-loader": "1.3.1",
+    "style-loader": "0.13.1",
+    "webpack": "2.4.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
