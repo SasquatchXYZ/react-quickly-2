@@ -2,7 +2,7 @@
   "name": "naive-router",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack -w"
@@ -21,12 +21,12 @@
     ]
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.5",
+    "babel-core": "6.18.2",
+    "babel-loader": "6.4.1",
+    "babel-preset-react": "6.5.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "webpack": "^4.29.0"
+    "webpack": "2.4.1",
+    "react": "15.5.4",
+    "react-dom": "15.5.4"
   }
 }
