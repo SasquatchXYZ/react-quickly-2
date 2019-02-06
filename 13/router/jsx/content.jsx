@@ -1,7 +1,7 @@
-const [React, {Component}] = require('react');
+const React = require('react');
 const {Link} = require('react-router');
 
-class Content extends Component {
+class Content extends React.Component {
   render() {
     return (
       <div>
@@ -25,7 +25,7 @@ class Content extends Component {
             </li>
             <li>
               <Link to="/login" activeClassName="active">
-                About
+                Login
               </Link>
             </li>
           </ul>

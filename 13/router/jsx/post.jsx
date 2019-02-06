@@ -2,7 +2,7 @@ const React = require('react');
 
 module.exports = function Product(props) {
   console.log(props);
-  let post = props.route.find(element => element.slug === props.params.id)
+  let post = props.route.posts.find(element => element.slug === props.params.id);
 
   return (
     <div>
