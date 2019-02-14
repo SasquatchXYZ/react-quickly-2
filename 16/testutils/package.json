@@ -1,0 +1,31 @@
+{
+  "name": "testutils",
+  "version": "1.0.0",
+  "description": "Using Jest and TestUtils to write UI Tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "build-watch": "./node_modules/.bin/webpack -w",
+    "build": "./node_modules/.bin/webpack"
+  },
+  "keywords": [],
+  "author": "Dalton Ricker",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "19.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-react": "6.24.1",
+    "jest-cli": "19.0.2",
+    "react": "15.5.4",
+    "react-dom": "15.5.4"
+  }
+}
