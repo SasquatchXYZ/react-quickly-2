@@ -3,7 +3,7 @@ const {connect} = require('react-redux');
 const {Link} = require('react-router');
 const axios = require('axios');
 const clean = require('clean-tagged-string').default;
-const {fetchMovieActionCreator} = require('modules/movies.js');
+const {fetchMoviesActionCreator} = require('modules/movies.js');
 const styles = require('./Movies.css');
 
 class Movies extends React.Component {
@@ -15,17 +15,23 @@ class Movies extends React.Component {
       }
     }`;
 
+    // console.log(query);
     axios.get(`/q?query=${query}`)
-      .then(res => this.props.fetchMovies(res))
+      .then(res => {
+        // console.log(res);
+        this.props.fetchMovies(res)
+      })
   };
 
   render() {
+    // console.log('movies loaded');
     const {
       children,
       movies = [],
       params = {}
     } = this.props;
 
+    // console.log(movies);
     return (
       <div className={styles.movies}>
         <div className={params.id ? styles.listHidden : styles.list}>
@@ -48,5 +54,5 @@ class Movies extends React.Component {
 module.exports = connect(({movies}) => ({
   movies: movies.all
 }), {
-  fetchMovies: fetchMovieActionCreator
+  fetchMovies: fetchMoviesActionCreator
 })(Movies);

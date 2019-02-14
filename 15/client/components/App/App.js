@@ -4,6 +4,7 @@ const styles = require('./App.css');
 
 class App extends React.Component {
   render() {
+    // console.log(`App Loaded`);
     const {children} = this.props;
 
     return (
@@ -14,4 +15,4 @@ class App extends React.Component {
   }
 }
 
-modules.exports = connect()(App);
+module.exports = connect()(App);
