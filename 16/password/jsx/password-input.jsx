@@ -1,15 +1,17 @@
 const React = require('react');
 
-const PasswordInput = (props) => {
-  return (
-    <input
-      className="form-control"
-      type={props.visible ? 'text' : 'password'}
-      name={props.name}
-      value={props.value}
-      onChange={props.onChange}
-    />
-  )
-};
+class PasswordInput extends React.Component {
+  render() {
+    return (
+      <input
+        className="form-control"
+        type={this.props.visible ? 'text' : 'password'}
+        name={this.props.name}
+        value={this.props.value}
+        onChange={this.props.onChange}
+      />
+    )
+  }
+}
 
-export default PasswordInput;
+module.exports = PasswordInput;

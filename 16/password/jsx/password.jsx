@@ -4,18 +4,25 @@ const generatePassword = require('../js/generate-password');
 
 const rules = require('../js/rules');
 
-const PasswordGenerate = require('./password-generate');
-const PasswordInfo = require('./password-info');
-const PasswordInput = require('./password-input');
-const PasswordVisibility = require('./password-visibility');
+const PasswordGenerate = require('./password-generate.jsx');
+const PasswordInfo = require('./password-info.jsx');
+const PasswordInput = require('./password-input.jsx');
+const PasswordVisibility = require('./password-visibility.jsx');
 
 class Password extends React.Component {
-  state = {
-    strength: {},
-    password: '',
-    visible: false,
-    ok: false
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      strength: {},
+      password: '',
+      visible: false,
+      ok: false
+    };
+    this.generate = this.generate.bind(this);
+    this.checkStrength = this.checkStrength.bind(this);
+    this.toggleVisibility = this.toggleVisibility.bind(this)
+  }
 
   checkStrength(event) {
     let password = event.target.value;
@@ -92,4 +99,4 @@ class Password extends React.Component {
   }
 }
 
-export default Password;
+module.exports = Password;

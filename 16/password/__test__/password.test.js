@@ -44,7 +44,7 @@ describe('Password', () => {
     let generateButton = TestUtils.findRenderedDOMComponentWithClass(password, 'generate-btn');
     expect(fD(rules[1]).firstChild.nodeName.toLowerCase()).toBe('#text');
     TestUtils.Simulate.click(fD(generateButton));
-    expect(fD(rules[1]).firstChild.nodeName.toLowerCase()).toBe('strike')
+    expect(fD(rules[1]).firstChild.nodeName.toLowerCase()).toBe('strike');
 
     done()
 

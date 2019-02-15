@@ -1,17 +1,19 @@
 const React = require('react');
 
-const PasswordVisibility = (props) => {
-  return (
-    <label className="form-control">
-      <input
-        className=""
-        type="checkbox"
-        checked={props.checked}
-        onChange={props.onChange}
-      />
-      Show Password
-    </label>
-  )
-};
+class PasswordVisibility extends React.Component {
+  render() {
+    return (
+      <label className="form-control">
+        <input
+          className=""
+          type="checkbox"
+          checked={this.props.checked}
+          onChange={this.props.onChange}
+        />
+        Show Password
+      </label>
+    )
+  }
+}
 
-export default PasswordVisibility;
+module.exports = PasswordVisibility;
