@@ -65,7 +65,7 @@ class Password extends React.Component {
         return {
           key: key,
           rule: rules[key],
-          isComplete: this.state.strength[key] || false
+          isCompleted: this.state.strength[key] || false
         }
       }
     });

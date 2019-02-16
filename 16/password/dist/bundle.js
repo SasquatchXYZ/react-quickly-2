@@ -9558,7 +9558,7 @@ class Password extends React.Component {
         return {
           key: key,
           rule: rules[key],
-          isComplete: this.state.strength[key] || false
+          isCompleted: this.state.strength[key] || false
         };
       }
     });
@@ -9730,7 +9730,7 @@ class PasswordInfo extends React.Component {
       React.createElement(
         'ul',
         null,
-        this.props.rules.map((processedRule, index, list) => {
+        this.props.rules.map(function (processedRule, index, list) {
           if (processedRule.isCompleted) return React.createElement(
             'li',
             { key: processedRule.key },
