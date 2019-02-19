@@ -35,7 +35,7 @@ app.all('*', (request, response, next) => {
   response.status(404).send('Not found... did you mean to go to /about instead?')
 });
 app.use((error, request, response, next) => {
-  console.error(request.url, error)
+  console.error(request.url, error);
   response.send('Wonderful, something went wrong...')
 });
 
