@@ -22,7 +22,7 @@ class MessageList extends React.Component {
         </thead>
         <tbody>
         {messages.map(message => (
-          <tr key={message.id}>
+          <tr key={message._id}>
             <td className="span2">{message.name}</td>
             <td className="span10">{message.message}</td>
           </tr>
