@@ -4,8 +4,8 @@ const {hashHistory, Router, Route, IndexRoute, Link, IndexLink} = require('react
 
 const Modal = require('./modal.jsx');
 const Cart = require('./cart.jsx');
-const Checkout = require('./checkout');
-const Product = require('./product');
+const Checkout = require('./checkout.jsx');
+const Product = require('./product.jsx');
 
 const PRODUCTS = [
   {id: 0, src: 'images/proexpress-cover.jpg', title: 'Pro Express.js', url: 'http://amzn.to/1D6qiqk'},
