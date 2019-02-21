@@ -30,11 +30,60 @@ const Copy = () => {
 };
 
 class App extends React.Component {
+  componentWillReceiveProps(nextProps) {
+    this.isModal = (nextProps.location.state && nextProps.location.state.modal);
 
+    if (this.isModal && nextProps.location.key !== this.props.location.key) {
+      this.previousChildren = this.props.children
+    }
+  }
+
+  render() {
+    console.log('Modal: ', this.isModal);
+
+    return (
+      <div className="well">
+        <Heading/>
+        <div>
+          {(this.isModal) ? this.previousChildren : this.props.children}
+          {(this.isModal)
+            ? <Modal isOpen={true} returnTo={this.props.location.state.returnTo}>
+              {this.props.children}
+            </Modal>
+            : ''
+          }
+        </div>
+      </div>
+    )
+  }
 }
 
 class Index extends React.Component {
-
+  render() {
+    return (
+      <div>
+        <Copy/>
+        <p><Link to="/cart" className="btn btn-danger">Cart</Link></p>
+        <div>
+          {PRODUCTS.map(picture => (
+            <Link key={picture.id}
+                  to={
+                    {
+                      pathname: `/products/${picture.id}`,
+                      state: {
+                        modal: true,
+                        returnTo: this.props.location.pathname
+                      }
+                    }
+                  }
+            >
+              <img style={{margin: 10}} src={picture.src} height="100" alt={picture.title}/>
+            </Link>
+          ))}
+        </div>
+      </div>
+    )
+  }
 }
 
 let cartItems = {};
