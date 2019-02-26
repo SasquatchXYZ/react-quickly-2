@@ -27,7 +27,7 @@ mongodb.MongoClient.connect(MONGODB_URL, function (err, db) {
     process.exit(1)
   }
 
-  app.use(compression());
+  app.use(compression);
   app.use(logger('dev'));
   app.use(errorHandler());
   app.use(bodyParser.json());
