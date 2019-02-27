@@ -16,9 +16,9 @@ const ReactDOMServer = require('react-dom/server');
 const React = require('react');
 
 const app = express();
-const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/react-quickly-autocomplete';
+const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/autocomplete';
 
-const Autocomplete = React.createFactory(require('./src/autocomplete'));
+const Autocomplete = React.createFactory(require('./src/autocomplete.jsx'));
 const PORT = process.env.PORT || 3000;
 
 mongodb.MongoClient.connect(MONGODB_URL, function (err, db) {
@@ -27,7 +27,7 @@ mongodb.MongoClient.connect(MONGODB_URL, function (err, db) {
     process.exit(1)
   }
 
-  app.use(compression);
+  app.use(compression());
   app.use(logger('dev'));
   app.use(errorHandler());
   app.use(bodyParser.json());

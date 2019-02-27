@@ -32,7 +32,7 @@ class Autocomplete extends React.Component {
   }
 
   filter(event) {
-    console.log(event);
+    // console.log(event);
     this.setState({
       currentOption: event.target.value,
       filteredOptions: (this.state.options.filter((option, index, list) => {
@@ -62,6 +62,38 @@ class Autocomplete extends React.Component {
       .catch(err => console.error('Failed to Save'))
   }
 
+  render() {
+    return (
+      <div className="form-group">
+        <input
+          type="text"
+          onKeyUp={event => (event.keyCode === 13 ? this.addOption() : '')}
+          className="form-control option-name"
+          onChange={this.filter}
+          value={this.currentOption}
+          placeholder="React.js"
+        >
+        </input>
+        {this.state.filteredOptions.map(option => (
+          <div key={option._id}>
+            <a className="btn btn-default option-list-item"
+               href={`/#/${option.name}`}
+               target="_blank"
+               rel="noreferrer noopener"
+            >
+              #{option.name}
+            </a>
+          </div>
+        ))}
+        {(() => {
+          if (this.state.filteredOptions.length === 0 && this.state.currentOption !== '')
+            return <a className="btn btn-info option-add" onClick={this.addOption}>
+              Add #{this.state.currentOption}
+            </a>
+        })()}
+      </div>
+    )
+  }
 }
 
 module.exports = Autocomplete;
