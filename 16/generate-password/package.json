@@ -15,6 +15,6 @@
   "author": "Dalton Ricer",
   "license": "ISC",
   "devDependencies": {
-    "jest-cli": "^19.0.2"
+    "jest-cli": "^29.3.1"
   }
 }
